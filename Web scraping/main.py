@@ -40,7 +40,7 @@ if len(r_table) == 1:
     rows = parsed_table.find("tr") #finds the table rows
     header_row = rows[0]#assume first row is a header row
     header_cols = header_row.find('th')
-    header_names = [x.text for x in header_cols] #advanced way to write a for loop
+   # header_names = [x.text for x in header_cols] #advanced way to write a for loop
 
     
     for row in rows[1:]: #loops through all the rows om this loop
@@ -52,8 +52,11 @@ if len(r_table) == 1:
         #    print(i,col.text,'\n\n')
             row_data.append(col.text)
         table_data.append(row_data)
-print(header_names)
-print(table_data[0])
+#print(header_names)
+#print(table_data[0])
 
 df = pd.DataFrame(table_data, columns=header_names)
 df.to_csv("cleaned_data.csv")
+
+
+#now im amount to make some changes in this shit 
